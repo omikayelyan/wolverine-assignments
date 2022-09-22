@@ -22,14 +22,8 @@ main:
         add     edx, eax
         mov     eax, DWORD PTR [rbp-12]
         add     eax, edx
-        movsx   rdx, eax
-        imul    rdx, rdx, 1431655766
-        mov     rcx, rdx
-        shr     rcx, 32
-        cdq
-        mov     eax, ecx
-        sub     eax, edx
-        mov     DWORD PTR [rbp-16], eax
+        div     eax, 3
+        print   eax
         mov     eax, 0
         pop     rbp
         ret
