@@ -57,3 +57,21 @@ int main()
         main();
     }
 }
+
+// Assembly representation ,goto example
+main:
+        push    rbp
+        mov     rbp, rsp
+        mov     DWORD PTR [rbp-8], 10
+        mov     DWORD PTR [rbp-4], 0
+.L2:
+        print   DWORD PTR [rbp - 4]
+        add     DWORD PTR [rbp-4], 1
+        mov     eax, DWORD PTR [rbp-4]
+        cmp     eax, DWORD PTR [rbp-8]
+        jg      .L3
+        jmp     .L2
+.L3:
+        mov     eax, 0
+        pop     rbp
+        ret
