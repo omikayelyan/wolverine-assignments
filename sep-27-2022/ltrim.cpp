@@ -1,5 +1,4 @@
 // ltrim(s); որը վերադարձնում է տողը առանց ձախից բացատների, այսինքն ltrim("   hello"); կվերադարձնի "hello"
-
 #include <iostream>
 #include <string>
 
@@ -11,6 +10,10 @@ std::string ltrim(std::string& s)
         if (s[i] == ' ')
         {
             ++count;
+        }
+        else
+        {
+            break;
         }
     }
     s.erase(0, count);
